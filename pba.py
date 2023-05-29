@@ -50,7 +50,7 @@ if submit:
     #Dataset
     df = pd.read_csv('https://raw.githubusercontent.com/HanifSantoso05/dataset_matkul/main/DataBerita.csv')
     names = []
-    with open(r'C:\Users\HP\test.txt', 'r') as fp:
+    with open('test.txt', 'r') as fp:
         for line in fp:
             x = line[:-1]
             names.append(x)
