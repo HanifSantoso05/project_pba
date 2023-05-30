@@ -15,7 +15,7 @@ from sklearn.model_selection import train_test_split
 import pickle5 as pickle 
 from sklearn.metrics import confusion_matrix, accuracy_score
 
-st.write("##PEMROSESAN BAHASA ALAMI A")
+st.write("## PEMROSESAN BAHASA ALAMI A")
 st.write("#### Dosen Pengampu : Dr. FIKA HASTARITA RACHMAN, ST., M.Eng")
 st.write("#### Kelompok : 1")
 st.write("##### Muhammad Hanif Santoso - 200411100078")
