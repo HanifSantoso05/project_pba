@@ -80,7 +80,7 @@ if submit:
     
     #Prediksi
     v_data = loaded_data_tfidf.fit_transform([stem]) 
-    v_data = np.array(input_vector).reshape(1, -1)
+    v_data = np.array(v_data).reshape(1, -1)
     y_preds = clf.predict(v_data)
 
     st.subheader('Preprocessing')
