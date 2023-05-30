@@ -17,10 +17,10 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 
 st.title("PEMROSESAN BAHASA ALAMI A")
 st.write("### Dosen Pengampu : Dr. FIKA HASTARITA RACHMAN, ST., M.Eng")
-st.write("#### Kelompok : 5")
-st.write("##### Hambali Fitrianto - 200411100074")
-st.write("##### Pramudya Dwi Febrianto - 200411100042")
-st.write("##### Febrian Achmad Syahputra - 200411100106")
+st.write("#### Kelompok : 1")
+st.write("##### Muhammad Hanif Santoso - 200411100078")
+st.write("##### Alfito Wahyu Kamaly - 200411100079")
+st.write("##### Fajrul Ihsan Kamil - 200411100172")
 
 #Navbar
 implementation = st.tabs(["Implementation"])
