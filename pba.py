@@ -49,24 +49,20 @@ if submit:
 
     #Dataset
     df = pd.read_csv('https://raw.githubusercontent.com/HanifSantoso05/dataset_matkul/main/DataBerita.csv')
-    names = []
+    dataset_prep = []
     with open('test.txt', 'r') as fp:
         for line in fp:
             x = line[:-1]
-            names.append(x)
+            dataset_prep.append(x)
 
     # TfidfVectorizer 
-    #tfidfvectorizer = TfidfVectorizer(analyzer='word')
-    #tfidf_wm = tfidfvectorizer.fit_transform(names)
-    #tfidf_tokens = tfidfvectorizer.get_feature_names_out()
-    #df_tfidfvect = pd.DataFrame(data = tfidf_wm.toarray(),columns = tfidf_tokens)
     with open('model.pkl', 'rb') as file:
         loaded_model = pickle.load(file)
     
     with open('tfidf.pkl', 'rb') as file:
         loaded_data_tfid = pickle.load(file)
     
-    tfidf_wm = loaded_data_tfid.fit_transform(names)
+    tfidf_wm = loaded_data_tfid.fit_transform(dataset_prep)
 
     #Train test split
     training, test = train_test_split(tfidf_wm,test_size=0.2, random_state=1)#Nilai X training dan Nilai X testing
@@ -83,7 +79,7 @@ if submit:
     lower_case_isi,clean_symbols,slang,stem = prep_input_data(word, slang_dict)
     
     #Prediksi
-    v_data = loaded_data_tfid.fit_transform(stem)
+    v_data = loaded_data_tfid.fit_transform([stem]).toarray()
     y_preds = clf.predict(v_data)
 
     st.subheader('Preprocessing')
