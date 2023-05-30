@@ -60,9 +60,9 @@ if submit:
         loaded_model = pickle.load(file)
     
     with open('tfidf.pkl', 'rb') as file:
-        loaded_data_tfid = pickle.load(file)
+        loaded_data_tfidf = pickle.load(file)
     
-    tfidf_wm = loaded_data_tfid.fit_transform(dataset_prep)
+    tfidf_wm = loaded_data_tfidf.fit_transform(dataset_prep)
 
     #Train test split
     training, test = train_test_split(tfidf_wm,test_size=0.2, random_state=1)#Nilai X training dan Nilai X testing
@@ -79,8 +79,8 @@ if submit:
     lower_case_isi,clean_symbols,slang,stem = prep_input_data(word, slang_dict)
     
     #Prediksi
-    v_data = loaded_data_tfid.fit_transform([stem]).toarray()
-    y_preds = clf.predict(v_data)
+#     v_data = loaded_data_tfidf.fit_transform([stem]).toarray()
+#     y_preds = clf.predict(v_data)
 
     st.subheader('Preprocessing')
     st.write("Case Folding :",lower_case_isi)
@@ -90,9 +90,10 @@ if submit:
 
     st.subheader('Akurasi')
     st.info(akurasi)
+    st.write(tfidf_wm)
 
-    st.subheader('Prediksi')
-    if y_preds == "Positif":
-        st.success('Positive')
-    else:
-        st.error('Negative')
+#     st.subheader('Prediksi')
+#     if y_preds == "Positif":
+#         st.success('Positive')
+#     else:
+#         st.error('Negative')
