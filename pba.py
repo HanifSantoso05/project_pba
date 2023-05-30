@@ -98,7 +98,7 @@ if submit:
     st.write("Steaming :",stem)
 
     st.subheader('Akurasi')
-    st.info(akurasi * 100"%")
+    st.info(akurasi * 100)
 
     st.subheader('Prediksi')
     if y_preds == "Positif":
