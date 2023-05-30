@@ -90,7 +90,7 @@ if submit:
 
     st.subheader('Akurasi')
     st.info(akurasi)
-    st.write(tfidf_wm)
+    st.write(v_data)
 
 #     st.subheader('Prediksi')
 #     if y_preds == "Positif":
