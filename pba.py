@@ -80,7 +80,7 @@ if submit:
     
     #Prediksi
     v_data = loaded_data_tfidf.fit_transform([stem])     
-    y_preds = clf.predict(v_data)
+    y_preds = clf.predict([v_data])
 
     st.subheader('Preprocessing')
     st.write("Case Folding :",lower_case_isi)
