@@ -90,10 +90,9 @@ if submit:
 
     st.subheader('Akurasi')
     st.info(akurasi)
-    st.write(v_data)
 
-#     st.subheader('Prediksi')
-#     if y_preds == "Positif":
-#         st.success('Positive')
-#     else:
-#         st.error('Negative')
+    st.subheader('Prediksi')
+    if y_preds == "Positif":
+        st.success('Positive')
+    else:
+        st.error('Negative')
