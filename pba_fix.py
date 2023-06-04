@@ -76,7 +76,7 @@ with st.container():
         </ol> 
         """,unsafe_allow_html=True)
         st.write("#### Dataset")
-        df = pd.read_csv(r"C:\Users\HP\DataBerita.csv")
+        df = pd.read_csv("DataBerita.csv")
         st.write(df)
     elif selected == "Implementation":
         #Getting input from user
@@ -114,28 +114,22 @@ with st.container():
             slang_dict = json.loads(data)
 
             #Dataset
-            Data_ulasan = pd.read_csv(r"C:\Users\HP\datapba_prep.csv")
+            Data_ulasan = pd.read_csv("datapba_prep.csv")
             ulasan_dataset = Data_ulasan['Steaming']
             sentimen = Data_ulasan['Label']
 
             # TfidfVectorizer 
-            tfidfvectorizer = TfidfVectorizer(analyzer='word')
-            tfidf_wm = tfidfvectorizer.fit_transform(ulasan_dataset)
-            tfidf_tokens = tfidfvectorizer.get_feature_names_out()
-            df_tfidfvect = pd.DataFrame(data = tfidf_wm.toarray(),columns = tfidf_tokens)
-            with open('model.pkl', 'rb') as file:
-                loaded_model = pickle.load(file)
-            
-            # with open('tfidf.pkl', 'rb') as file:
-            #     loaded_data_tfid = pickle.load(file)
-            
-            # tfidf_wm = loaded_data_tfid.fit_transform(names)
+            with open('tfidf.pkl', 'rb') as file:
+            loaded_data_tfid = pickle.load(file)
+            tfidf_wm = loaded_data_tfid.fit_transform(ulasan_dataset)
 
             #Train test split
             training, test = train_test_split(tfidf_wm,test_size=0.2, random_state=1)#Nilai X training dan Nilai X testing
             training_label, test_label = train_test_split(sentimen, test_size=0.2, random_state=1)#Nilai Y training dan Nilai Y testing    
 
             # model
+            with open('model.pkl', 'rb') as file:
+            loaded_model = pickle.load(file)
             clf = loaded_model.fit(training,training_label)
             y_pred=clf.predict(test)
 
