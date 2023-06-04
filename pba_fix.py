@@ -120,7 +120,7 @@ with st.container():
 
             # TfidfVectorizer 
             with open('tfidf.pkl', 'rb') as file:
-            loaded_data_tfid = pickle.load(file)
+                loaded_data_tfid = pickle.load(file)
             tfidf_wm = loaded_data_tfid.fit_transform(ulasan_dataset)
 
             #Train test split
@@ -129,7 +129,7 @@ with st.container():
 
             # model
             with open('model.pkl', 'rb') as file:
-            loaded_model = pickle.load(file)
+                loaded_model = pickle.load(file)
             clf = loaded_model.fit(training,training_label)
             y_pred=clf.predict(test)
 
