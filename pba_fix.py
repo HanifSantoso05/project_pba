@@ -140,7 +140,7 @@ with st.container():
             lower_case_isi,clean_symbols,slang,stem = prep_input_data(word, slang_dict)
             
             # #Prediksi
-            v_data = tfidfvectorizer.transform([stem]).toarray()
+            v_data = loaded_data_tfid.transform([stem]).toarray()
             y_preds = clf.predict(v_data)
 
             st.subheader('Preprocessing')
