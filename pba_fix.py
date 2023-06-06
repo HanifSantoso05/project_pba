@@ -58,9 +58,8 @@ with st.container():
         st.write("""<h3 style = "text-align: center;">
         <img src="https://onlinelearning.binus.ac.id/files/2021/10/Web-Banner-Artikel-BOL-31-06.jpg" width="650" height="300">
         </h3>""",unsafe_allow_html=True)
-        # st.write("""
-        # Anemia adalah suatu kondisi di mana Anda kekurangan sel darah merah yang sehat untuk membawa oksigen yang cukup ke jaringan tubuh Anda. Penderita anemia, juga disebut hemoglobin rendah, bisa membuat Anda merasa lelah dan lemah.
-        # """)
+        st.write(""" <p style = "text-align: justify;">Pandemi COVID-19 merupakan penyakit yang skala penyebarannya terjadi secara global di seluruh dunia, termasuk Indonesia. Banyak bidang yang terkena dampak pandemi ini termasuk pendidikan. Indonesia saat ini sedang menjalankan strategi pembelajaran daring yang menimbulkan banyak opini masyarakat. Analisis sentiment pada cabang Text Mining digunakan untuk mengklasifikasi suatu entitas pada dokumen teks yang terdiri dari dua kelas yaitu positif dan negatif, kelas tersebut diperoleh dengan mengklasifikasikan dataset headline dan substansi berita terkait pembelajaran daring. Tujuan dari aplikasi ini adalah untuk melakukan prediksi pendapat orangtua terhadap pembelajaran daring serta mengetahui nilai akurasi dari pendapat tersebut dengan algoritma Naïve Bayes Classifier</p>""",unsafe_allow_html=True)
+        
 
     elif selected == "Dataset":
         st.write("#### Deskripsi Dataset")
