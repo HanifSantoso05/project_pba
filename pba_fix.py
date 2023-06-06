@@ -160,7 +160,7 @@ with st.container():
     elif selected == "Tentang Kami":
         st.write("##### Mata Kuliah = Pembelajaran Bahasa Alami - A") 
         st.write('##### Kelompok 1')
-        st.write("1. Muhammad Hanif Santoso (200411100074)")
+        st.write("1. Muhammad Hanif Santoso (200411100078)")
         st.write("2. Alfito Wahyu Kamaly (200411100079)")
         st.write("3. Fajrul Ihsan Kamil (200411100172)")
         
