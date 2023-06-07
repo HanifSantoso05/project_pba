@@ -17,7 +17,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 import pickle5 as pickle 
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, precision_score, recall_score,  accuracy_score, classification_report
-import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
 
